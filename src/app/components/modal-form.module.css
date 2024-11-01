@@ -17,8 +17,21 @@
     background: rgba(255, 255, 255, 1);
     border-radius: 5px;
     padding: 10px 40px 20px 20px;
+    width: 400px;
+    height: 330px;
   }
-  
+  .header {
+    margin: 10px 10px;
+    height: 30px;
+    width: 100%;
+  }
+  .middle { 
+    border-radius: 5px;
+    border: solid rgb(17, 85, 202);
+    margin: 10px 10px;
+    height: 200px;
+    width: 100%;
+  }
   .closeButton {
     position: absolute;
     width: 40px;

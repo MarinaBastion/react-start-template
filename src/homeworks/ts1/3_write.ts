@@ -44,7 +44,7 @@ let GetRandomImage = () : string =>
 {
     var images = ["agustin-diaz-gargiulo-7F65HDP0-E0-unsplash", "business-people-shaking-hands-together", "graphic-node-qOTyvyjVyoY-unsplash", "urban-vintage-VfUN94cUy4o-unsplash"];
     var randomPick = images[Math.random() * images.length | 0];
-    return  "./assets/" + randomPick + ".jpg";
+    return  randomPick + ".jpg";
 }
 let GetRandomName = (): string => 
 {
@@ -72,7 +72,7 @@ export class GuidGenerator {
 
   export const  CreateRandomProduct = (CreatedAt: string): Product => {
    let category1: Category = {id: GuidGenerator.standard(), name: GetRandomName(),photo: GetRandomImage()};
-   let product: Product = { id: GuidGenerator.standard(), photo: GetRandomImage(),name: GetRandomName(),desc:'',createdAt: CreatedAt,oldPrice:Math.random() * 100,
+   let product: Product = { id: GuidGenerator.standard(), photo: GetRandomImage(),name: GetRandomName(),desc:'bfjkenvklelkvnlek',createdAt: CreatedAt,oldPrice:Math.random() * 100,
        price:Math.random() * 100, category: category1};
     return  product; 
 }

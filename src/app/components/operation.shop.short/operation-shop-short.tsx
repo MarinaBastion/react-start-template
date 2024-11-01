@@ -3,20 +3,20 @@ import type { MouseEventHandler, ReactElement, ReactNode } from "react";
 import Styles from './operation-shop-short.module.css';
 import { compareAsc, format } from "date-fns";
 
-export interface OperationShopProps {
-    price: number | null;
-    image: string | null;
-    name: string | null;
-    category_name: string | null;
-    description: string | null;
+export interface OperationShopShortProps {
+    price: number ;
+    photo: string ;
+    name: string ;
+    category_name: string ;
+    description: string ;
 }
 
-export const OperationShop: React.FC<OperationShopProps> = ({price,image, name,category_name, description }) => {
+export const OperationShop: React.FC<OperationShopShortProps> = ({price,photo, name,category_name, description }) => {
    
     return (
         <div className={Styles.wrap}>
             <div className= {Styles.product}>
-                <img src={require("../../assets/" + image)}  />
+                <img src={require("../../assets/" + photo)}  />
             </div>
              <label htmlFor="price">Сумма</label>
              <input type="number" id="price"  min="10" max="10000000000" value={price} />

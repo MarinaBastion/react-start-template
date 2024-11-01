@@ -39,7 +39,7 @@ module.exports = (_, args) => {
     module: {
       rules: 
       [
-        {
+        { 
           test: /\.(png|jpe?g|gif)$/i,
           use: [
             {
@@ -57,6 +57,28 @@ module.exports = (_, args) => {
           test: /\.(js|ts)x?$/,
           loader: require.resolve('babel-loader'),
           exclude: /node_modules/,
+          options: {
+            "presets": ["@babel/preset-react"]
+          }
+        },
+        // {
+        //   test: /\.html$/i,
+        //   type: "asset/resource",
+        //   generator: {
+        //       filename: "[name][ext]"
+        //   }
+        // },
+        {
+          test: /\.(png|jpg)$/i,
+          type: 'asset',
+          parser: {
+              dataUrlCondition: {
+                  maxSize: 10 * 1024 // Inline images under 10KB
+              }
+          },
+          generator: {
+              filename: 'images/[name]-[hash][ext]'
+          }
         },
         {
           test: /\.less$/,

@@ -14,18 +14,18 @@
 }
 
 .Appheader {
-    background-color: #282c34;
+    background-color: var(--background-primary);;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: var(--accent);
 }
 
 .App-link {
-    color: #61dafb;
+    color: var(--link-color);
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +36,34 @@
         transform: rotate(360deg);
     }
 }
+
+
+:root {
+    /* light theme tokens */
+    --background-primary-light: 44, 191, 170;
+    --accent-light: 37, 89, 88;
+  
+    /* dark theme tokens */
+    --background-primary-dark: 25, 48, 66;
+    --accent-dark: 90, 182, 204;
+  }
+  
+  /* map tokens to proper theme */
+  html[data-theme='light'] {
+    --background-primary: #d4b6cf;
+    --accent:  #041d25;
+    --link-color:  #61dafb;
+  }
+  
+  html[data-theme='dark'] {
+    --background-primary: #290404;
+    --accent: #e0e8db;
+    --link-color:  #05161b;
+  }
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 5px;
+
+  }

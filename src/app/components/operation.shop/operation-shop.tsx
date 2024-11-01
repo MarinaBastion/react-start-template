@@ -5,16 +5,17 @@ import { compareAsc, format } from "date-fns";
 import {ImageSlider,Image}  from '../custom-slider/image.slider';
 
 export interface OperationShopProps {
-    price: number | null;
+    price: number ;
     images: Image[];
-    name: string | null;
-    category_name: string | null;
-    description: string | null;
+    name: string ;
+    category_name: string ;
+    description: string ;
 }
 
 export const OperationShop: React.FC<OperationShopProps> = ({price,images, name,category_name, description }) => {
    
     return (
+        <li>
         <div className={Styles.wrap}>
              <ImageSlider images = {images}/>
              <label htmlFor="price">Сумма</label>
@@ -30,5 +31,6 @@ export const OperationShop: React.FC<OperationShopProps> = ({price,images, name,
              <button type="button">В корзину</button>
              
         </div>
+        </li>
       );
 }
