@@ -25,7 +25,6 @@ export const CroppedText: FC<CroppedTextProps> = ({ className, children, opened,
   const lineHeight = useRef<number>();
 
   const reset = useEvent(() => {
-    debugger;
     height.current = Math.round(lineHeight.current * rows);
     texts.current = [];
     min.current = mid.current = 0;
@@ -33,19 +32,16 @@ export const CroppedText: FC<CroppedTextProps> = ({ className, children, opened,
   });
 
   useLayoutEffect(() => {
-    debugger;
     lineHeight.current = lineHeight.current ?? root.current.getBoundingClientRect()?.height;
     items.current = children?.split(' ') || [];
     reset();
   }, [reset, children]);
 
   useLayoutEffect(() => {
-    debugger;
     let timeout: number;
     let prevWidth: number = root.current?.getBoundingClientRect()?.width;
     let prevHeight: number = root.current?.getBoundingClientRect()?.height;
     const fn = () => {
-      console.log("fn")
       cancelAnimationFrame(timeout);
       timeout = window.requestAnimationFrame(() => {
         console.log("requestAnimationFrame")
@@ -72,9 +68,7 @@ export const CroppedText: FC<CroppedTextProps> = ({ className, children, opened,
   }, [reset, rows]);
 
   useLayoutEffect(() => {
-    debugger;
     const checkoutTexts = (callback: () => void) => {
-        console.log("checkoutTexts declare ")
       if (texts.current.length < 3) {
         texts.current.push(text);
         callback();
@@ -95,7 +89,6 @@ export const CroppedText: FC<CroppedTextProps> = ({ className, children, opened,
     };
 
     checkoutTexts(() => {
-        console.log("checkoutTexts  ")
       if (root.current.getBoundingClientRect().height <= height.current) {
         min.current = mid.current;
       } else {
