@@ -61,13 +61,6 @@ module.exports = (_, args) => {
             "presets": ["@babel/preset-react"]
           }
         },
-        // {
-        //   test: /\.html$/i,
-        //   type: "asset/resource",
-        //   generator: {
-        //       filename: "[name][ext]"
-        //   }
-        // },
         {
           test: /\.(png|jpg)$/i,
           type: 'asset',
@@ -110,8 +103,27 @@ module.exports = (_, args) => {
           test: /\.svg/,
           type: 'asset/inline',
         },
+        // {
+        //   test:  /\.(sass|scss)$/,
+        //   use: [
+        //     {
+        //       loader: MiniCssExtractPlugin.loader,
+        //     },
+        //     "style-loader",
+        //     {
+        //       loader: 'css-loader',
+        //       options: {
+        //         modules: {
+        //           localIdentName: '[name]_[local]-[hash:base64:5]',
+        //         },
+        //       },
+        //     },
+        //     'sass-loader',
+            
+        //   ],
+        // },
         {
-          test: /\.s[ac]ss$/i,///\.(sa|sc|c)ss$/i,
+          test: /\.s[ac]ss$/i,
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
@@ -124,9 +136,15 @@ module.exports = (_, args) => {
                 },
               },
             },
-            'sass-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true, // <-- !!IMPORTANT!!
+              }
+            }
           ],
         },
+        
       ],
     },
     plugins: [

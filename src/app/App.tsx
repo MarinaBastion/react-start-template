@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { ItemList} from "./components/product-list/product-list";
 import { Product,CreateRandomProduct } from "src/homeworks/ts1/3_write";
 import { OperationShop ,OperationShopShortProps} from './components/operation.shop.short/operation-shop-short';
-import { P } from 'storybook-static/598.4d5f2cc0.iframe.bundle';
+
 
 
  
