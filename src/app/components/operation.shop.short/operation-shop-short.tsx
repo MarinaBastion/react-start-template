@@ -9,9 +9,10 @@ export interface OperationShopShortProps {
     name: string ;
     category_name: string ;
     description: string ;
+    caption?: string;
 }
 
-export const OperationShop: React.FC<OperationShopShortProps> = ({price,photo, name,category_name, description }) => {
+export const OperationShop: React.FC<OperationShopShortProps> = ({price,photo, name,category_name, description,caption }) => {
    
     return (
         <div className={Styles.wrap}>
@@ -29,7 +30,7 @@ export const OperationShop: React.FC<OperationShopShortProps> = ({price,photo, n
                 {description.length > 250 ?
                 `${description.substring(0, 250)}...` : description}
              </textarea>
-             <button type="button">В корзину</button>
+             {caption && <button type="button"><span>{caption}</span></button>}
              
         </div>
       );

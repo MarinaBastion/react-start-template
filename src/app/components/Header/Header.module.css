@@ -1,0 +1,36 @@
+.header {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+    background-color: #ffffff !important;
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-top: 0px;
+    padding-bottom: 0px;
+	/* width: 100%;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    background: lightblue;
+    /* text-align: center; */
+   /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+  }
+  .icon {
+    margin-left: 10px;
+    float: right;
+}
+span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  }
+.active{
+	color: red;
+}
+.nav{
+	margin: 5px 15px;
+}

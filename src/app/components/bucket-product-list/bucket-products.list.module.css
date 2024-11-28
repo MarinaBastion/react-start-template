@@ -1,0 +1,19 @@
+.product_item {
+    background: #f4f4f4;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+button {
+  width: 30%;
+  align-self: center;
+  height: 65px;
+  border: 5px;
+}
+button span {
+  display: block;
+  padding-top: 22px;
+  text-align: center;
+  line-height: 1em;
+}

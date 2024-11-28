@@ -15,7 +15,7 @@ export const BucketButton: React.FC<BucketButtonProps> = ({countNumber }) => {
         {
             return (
                 <div className={Styles.button_container}>
-                    <button type="button">Добавть в корзину</button>
+                    <button type="button">buttonLabel</button>
                 </div>
               );            
         }

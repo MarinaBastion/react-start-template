@@ -10,7 +10,9 @@ import { useTranslation } from 'react-i18next';
 import { ItemList} from "./components/product-list/product-list";
 import { Product,CreateRandomProduct } from "src/homeworks/ts1/3_write";
 import { OperationShop ,OperationShopShortProps} from './components/operation.shop.short/operation-shop-short';
-
+import { RegisterForm } from './components/registration_login/register';
+import { NewProductForm } from './components/createNewProduct/NewProduct';
+import Router from "./routes/Routes"
 
 
  
@@ -42,32 +44,28 @@ function App() {
     return CreateRandomProduct(date_dt)}
 
   return (
-   
-  <LangProvider langName={lang} children = {
-      <div className={Styles.App}>
-        <ShowModal modalContainerId="modal_container_id" child = {""}></ShowModal>
-        <ItemList returnNewItem={addNewItem} children= {({ price =prod.price,photo =prod.photo,name = prod.name,category_name = prod.category.name, description = prod.desc}) => <OperationShop   photo ={photo} price={price} name= {name} category_name= {category_name} description= {description} />
-      } />
-        <ThemeProvider themeName={theme} children = {
-        <header className={Styles.Appheader}>
-          <div className={Styles.buttonGroup}>
-            <ButtonGroup  buttons={["light","dark"]} doSomethingAfterClick={getThemeName}/>
-          </div>
-          <div className={Styles.buttonGroup}>
-           <ButtonGroup  buttons={["en","ru"]} doSomethingAfterClick={getLangName}/>
-          </div>
-          <img src={logo} className={Styles.App_logo} alt="logo" />
-          <p>{t('title')}
-          <ul>
-          <li>{t('description.part1')}</li>
-          <li>{t('description.part2')}</li>
-          <li>{t('description.part3')}</li>
-          <li>{t('description.part4')}</li>
-          </ul>
-          </p>
-        </header>
-        } />
-      </div>}/>
+    <><Router/></>
+    // <>< NewProductForm /><LangProvider langName={lang} children={<div className={Styles.App}>
+    //   <ShowModal modalContainerId="modal_container_id" child={""}></ShowModal>
+    //   <ItemList returnNewItem={addNewItem} children={({ price = prod.price, photo = prod.photo, name = prod.name, category_name = prod.category.name, description = prod.desc }) => <OperationShop photo={photo} price={price} name={name} category_name={category_name} description={description} />} />
+    //   <ThemeProvider themeName={theme} children={<header className={Styles.Appheader}>
+    //     <div className={Styles.buttonGroup}>
+    //       <ButtonGroup buttons={["light", "dark"]} doSomethingAfterClick={getThemeName} />
+    //     </div>
+    //     <div className={Styles.buttonGroup}>
+    //       <ButtonGroup buttons={["en", "ru"]} doSomethingAfterClick={getLangName} />
+    //     </div>
+    //     <img src={logo} className={Styles.App_logo} alt="logo" />
+    //     <p>{t('title')}
+    //       <ul>
+    //         <li>{t('description.part1')}</li>
+    //         <li>{t('description.part2')}</li>
+    //         <li>{t('description.part3')}</li>
+    //         <li>{t('description.part4')}</li>
+    //       </ul>
+    //     </p>
+    //   </header>} />
+    // </div>} /></>
   );
 }
 

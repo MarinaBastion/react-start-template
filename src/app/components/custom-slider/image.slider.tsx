@@ -12,12 +12,13 @@ interface ImageProps{
 }
 
 export const ImageSlider: React.FC<ImageProps> = ({images}) => {
-  const [selectedId, setSelectdId] = useState<number>(1);
+  debugger;
+  const [selectedId, setSelectdId] = useState<number>(0);
   const prevImage = () => {
-    setSelectdId((prev) => (prev <= 1 ? images.length : prev - 1));
+    setSelectdId((prev) => (prev <= 0? images.length-1 : prev - 1));
   };
   const nextImage = () => {
-    setSelectdId((prev) => (prev >= images.length ? 1 : prev + 1));
+    setSelectdId((prev) => (prev >= images.length-1 ? 0 : prev + 1));
   };
   return (
       <div className={Styles.image}>
@@ -26,7 +27,9 @@ export const ImageSlider: React.FC<ImageProps> = ({images}) => {
             {images
               .filter((image) => image.id === selectedId)
               .map((image) => {
-                return <img key={image.id} src={require("../../assets/" + image.url)}  />;
+                return <img key={image.id} src= {image.url}  />;
+                // return <img key={image.id} src={require("../../assets/" + image.url)}  />;
+                
               })}
           </div>
           <button className={Styles.button_prev} onClick={prevImage}>
@@ -38,17 +41,18 @@ export const ImageSlider: React.FC<ImageProps> = ({images}) => {
             Next{" "}
           </button>
           </div>
-           <div className={Styles.thumbnails}>
+           {/* <div className={Styles.thumbnails}>
             {images.map((image: Image) => {
               return (
                 <img
                   key={image.id}
-                  src={require("../../assets/" + image.url)}
+                  src={image.url}
+                  // src={require("../../assets/" + image.url)}
                   onClick={() => setSelectdId(image.id)}
                 />
               );
             })}
-          </div>
+          </div> */}
         
       </div>
   );

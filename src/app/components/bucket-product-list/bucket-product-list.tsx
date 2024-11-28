@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import Styles from './products.list.module.css';
+import Styles from './bucket-products.list.module.css';
 import { OperationShop, OperationShopShortProps } from '../operation.shop.short/operation-shop-short';
 import { Product,CreateRandomProduct } from "src/homeworks/ts1/3_write";
 import useIntersectionObserver from "src/app/hooks/useIntersectionObserver";
@@ -7,7 +7,7 @@ import { OperationShopProps } from "../operation.shop/operation-shop";
 import { ModalForm } from "../modal-form.module";
 import {EditProductForm} from "../editNewProduct/EditProduct"
 import {Image} from "../custom-slider/image.slider"
-import {BucketButton} from "../bucket-button/bucket-button"
+import { BucketButton } from "../bucket-button/bucket-button";
     
 export interface IItemContent{
     returnNewItem?: (arg:string) => any ;
@@ -16,22 +16,11 @@ export interface IItemContent{
 
 const modalContainerId = "modal_product_id"
 
-export const ItemList: FC<IItemContent> = ({returnNewItem,children}) => {
+export const bucketList: FC<IItemContent> = ({returnNewItem,children}) => {
   const [items, setItems] = useState([]);
   const [next, setNext] = useState(1);
   const [loading, setLoading] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-    
-
-    //const handleClose = () => { setModalVisible(false)};
-    const handleModalOpen = () => {
-      setModalVisible(true);
-    
-    };
-    const handleModalClose = () => {
-      setModalVisible(false);
-    };
-  //const observer = useRef<IntersectionObserver | null>(null);
 
   const loadMoreProducts = useCallback(async () => {
     debugger;
@@ -64,10 +53,9 @@ export const ItemList: FC<IItemContent> = ({returnNewItem,children}) => {
             ref={items.length === index + 1 ? lastProductElementRef : null}
           >
             {children && children(item)}
-           <OperationShop   photo ={item.photo} price={item.price} name= {item.name} category_name= {item.category.name} description= {item.desc} caption="В корзину" />
-           <button type="button" onClick={handleModalOpen}><span>Edit product</span></button>          
-           {modalVisible && (<ModalForm isVisible= {true} modalContainerId= {modalContainerId} onClose = {handleModalClose} children = {<EditProductForm   price={item.price} photos={[{id:1,url:item.photo}]} name= {item.name} category_name= {item.category.name} description= {item.desc}  />}  />)}
-           
+           <OperationShop   photo ={item.photo} price={item.price} name= {item.name} category_name= {item.category.name} description= {item.desc} caption="Delete" />
+           <BucketButton countNumber={1}/>
+          
           </li>
         ))}
       </ul>

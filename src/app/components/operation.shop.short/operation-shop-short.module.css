@@ -26,7 +26,12 @@ textarea {
 button {
     width: 30%;
     align-self: center;
-    height: 25px;
+    height: 65px;
+}
+button span {
+  display: block;
+  text-align: center;
+  line-height: 1em;
 }
 .product img {
   border-radius: 5%;
