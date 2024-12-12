@@ -65,17 +65,13 @@ export const EditProductForm: FC<IProductProps> = ({ price,photos, name, categor
         if ( fw != null || fw != undefined)
         for (var i = 0; i < fw.length; i++) {
             var im: photo = {id : 0, url: "" };
-            console.log(fw[i]);
             im.id = i;
             im.url = URL.createObjectURL(fw[i])
-            console.log(im.url)
             ip.push(im)
             urls.push(im.url);
             setImages(ip);
         }
         setFileUrl(urls);
-        
-        console.log(filesWatch)
 
     },[filesWatch]);
     
