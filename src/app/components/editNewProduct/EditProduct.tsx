@@ -1,7 +1,7 @@
 import * as React from "react"
 import { FC ,MouseEventHandler,useEffect,useCallback,useState} from "react"
 import { useForm } from "react-hook-form"
-import {ImageSlider, Image as photo}  from '../custom-slider/image.slider'
+import {ImageSlider, Image as photo}  from '../Custom-slider/image.slider'
 import Styles from "../registration_login/register.module.css"
 import useFilePreview  from "../../hooks/useFilePreview"
 import { watchFile } from "fs"
@@ -65,17 +65,13 @@ export const EditProductForm: FC<IProductProps> = ({ price,photos, name, categor
         if ( fw != null || fw != undefined)
         for (var i = 0; i < fw.length; i++) {
             var im: photo = {id : 0, url: "" };
-            console.log(fw[i]);
             im.id = i;
             im.url = URL.createObjectURL(fw[i])
-            console.log(im.url)
             ip.push(im)
             urls.push(im.url);
             setImages(ip);
         }
         setFileUrl(urls);
-        
-        console.log(filesWatch)
 
     },[filesWatch]);
     

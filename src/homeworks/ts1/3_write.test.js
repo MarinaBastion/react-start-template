@@ -1,7 +1,7 @@
 // Этот блок кода удалить и раскомментировать код ниже
 it('remove it', () => {
-  expect(true).toBe(true);
-});
+    expect(true).toBe(true)
+})
 
 // import { createRandomOperation, createRandomProduct } from './3_write';
 //
