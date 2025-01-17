@@ -1,0 +1,16 @@
+.wrapper{
+  display: flex;
+  row-gap: 5px;
+  flex-direction: column;
+  justify-content: space-between;
+  width:400px;
+  padding:20px;
+  height: 150px;
+  }
+.overflow {
+  max-height: 50px;
+  overflow: auto;
+}
+.scrollable{
+  size: 3;
+}

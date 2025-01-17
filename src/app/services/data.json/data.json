@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "lastName": "Leanne Graham",
+      "firstName": "Bret",
+      "email": "Sincere@april.biz",
+      "role" : "admin"
+    },
+    {
+        "id": 2,
+        "lastName": "Ervin Howell",
+        "firstName": "Antonette",
+        "email": "Shanna@melissa.tv",
+        "role" : "user"
+    },
+    {
+        "id": 3,
+        "lastName": "Clementine Bauch",
+        "firstName": "Samantha",
+        "email": "Nathan@yesenia.net",
+        "role" : "admin"      
+    },
+    {
+        "id": 4,
+        "lastName": "Patricia Lebsack",
+        "firstName": "Karianne",
+        "email": "Julianne.OConner@kory.org",
+        "role" : "user"  
+      },
+    {
+        "id": 5,
+        "lastName": "Chelsey Dietrich",
+        "firstName": "Karianne",
+        "email":"Kamren",
+        "role" : "user"  
+    }
+]
