@@ -17,3 +17,6 @@ button span {
   text-align: center;
   line-height: 1em;
 }
+.div_container {
+  padding: 50px 20px;
+}

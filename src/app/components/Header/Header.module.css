@@ -12,16 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-	/* width: 100%;
-    position: sticky;
-    top: 0;
-    padding: 10px;
-    background: lightblue;
-    /* text-align: center; */
-   /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
-  }
+	}
   .icon {
     margin-left: 10px;
     float: right;

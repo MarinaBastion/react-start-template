@@ -1,6 +1,7 @@
 .wrap {
     background: rgba(81, 76, 76, 0.15);
-    position: fixed;
+    position:absolute;
+    overflow:scroll;
     width: 100%;
     height: 100%;
     z-index: 5;
